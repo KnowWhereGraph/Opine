@@ -6,13 +6,44 @@
   <link rel="stylesheet" type="text/css" href="lib/semantic.min.css">
   <script src="lib/jquery-3.4.1.min.js"></script>
   <script src="lib/semantic.min.js"></script>
+
+  <script type="text/javascript" src="mapping.js" defer></script>
+  <script type="text/javascript" src="opine.js" defer></script>
 </head>
 
 <body>
   <!-- The Menu bar -->
   <div class="ui menu">
-    <div class="header item" id="experiment-name-label">Opine</div>
+    <div class="header item">Opine</div>
   </div>
+
+  <div class="ui container">
+    <div class="ui form" id="upload-data-form">
+      <div class="field" id="column-names-field">
+        <label>Column Names</label>
+        <textarea id="column-names-textarea" rows=3 placeholder="Enter column names as a list of comma separated values."></textarea>
+      </div>
+      <div class="field" id="sample-data-field">
+        <label>Sample Data</label>
+        <textarea id="sample-data-textarea" rows=3 placeholder="Enter one row of sample data as a list of comma separated values."></textarea>
+      </div>
+      <button class="ui red button" id="upload-clear-button">Clear</button>
+      <button class="ui blue button" id="upload-next-button">Next</button>
+    </div>
+
+    <div class="ui segment" id="mapping-view" style="display: none">
+      <table class="ui table" id="mapping-table">
+        <thead>
+          <tr>
+            <th>Column Name</th>
+            <th>Map To</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+
 </body>
 
 </html>
